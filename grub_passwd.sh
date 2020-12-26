@@ -4,8 +4,9 @@ edit_grub ()
 {
 	echo "Enter username: "
 	read username
-
-	sed -i.bak -e '/^set.*$/d' -e '/^password.*$/d' $path 
+	
+	sed -i -e '/^set.*$/d' -e '/^password.*$/d' $path
+	cp $path $path.bak
 	printf "\nset superusers=\"%s\"\n" "$username" >> $path
 	printf "password_pbkdf2 %s %s\n" "$username" "$str" >> $path
 	cp /boot/grub/grub.cfg /boot/grub/grub.cfg.bak
