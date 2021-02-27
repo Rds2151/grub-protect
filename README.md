@@ -12,3 +12,13 @@ Important command use in script
 > grub-mkpasswd-pbkdf2 (generate hashed password for GRUB)
 
 > update-grub
+
+## Option
+
+./grub_passwd.sh [Option]
+
+<details>
+           <summary>Option</summary>
+           <pre>  -e    Edit grub loader</pre>
+           <pre>  -r    Remove grub password</pre>
+         </details>
